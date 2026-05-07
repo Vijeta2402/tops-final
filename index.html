@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthcare Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+  <!-- 🔷 HEADER -->
+  <div class="page">
+    <header class="header">
+      <div class="logo"> </div>
+      <button class="menu-btn">☰</button>
+      <nav class="nav">
+        <a href="#" class="nav-item">
+          <span class="icon home-icon"></span>
+          <span>Overview</span>
+        </a>
+
+        <a href="#" class="nav-item active">
+          <span class="icon patient-icon"></span>
+          <span>Patients</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="icon schedule-icon"></span>
+          <span>Schedule</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="icon message-icon"></span>
+          <span>Message</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="icon transaction-icon"></span>
+          <span>Transactions</span>
+        </a>
+      </nav>
+
+      <div class="profile">
+        <div class="profile-pic"></div>
+        <div class="profile-info">
+          <h3>Dr. Jose Simmons</h3>
+          <p>General Practitioner</p>
+        </div>
+        <div class="settings"></div>
+        <div class="more_vert"></div>
+      </div>
+    </header>
+   
+    <div class="container">
+
+      <!-- 🔷 LEFT SIDEBAR -->
+
+      <aside class="sidebar-left">
+        <div class="sidebar-content">
+          <h3>Patients</h3>
+
+          <ul class="patient-list">
+
+            <li class="patient">
+              <div class="patient-left">
+                <div class="patient-pic-1"></div>
+                <div class="patient-info">
+                  <h4>Jessica Taylor</h4>
+                  <p>Female, 28</p>
+                </div>
+              </div>
+              <div class="more"></div>
+            </li>
+
+            <li class="patient">
+              <div class="patient-left">
+                <div class="patient-pic-2"></div>
+                <div class="patient-info">
+                  <h4>Ryan Johnson</h4>
+                  <p>Male, 45</p>
+                </div>
+              </div>
+              <div class="more"></div>
+            </li>
+
+            <li class="patient">
+              <div class="patient-left">
+                <div class="patient-pic-3"></div>
+                <div class="patient-info">
+                  <h4>Emily Williams</h4>
+                  <p>Female, 36</p>
+                </div>
+              </div>
+              <div class="more"></div>
+            </li>
+
+            <li class="patient">
+              <div class="patient-left">
+                <div class="patient-pic-4"></div>
+                <div class="patient-info">
+                  <h4>Brandon Mitchell</h4>
+                  <p>Male, 30</p>
+                </div>
+              </div>
+              <div class="more"></div>
+            </li>
+            <li class="patient">
+              <div class="patient-left">
+                <div class="patient-pic-5"></div>
+                <div class="patient-info">
+                  <h4>Samantha Johnson</h4>
+                  <p>Female, 56</p>
+                </div>
+              </div>
+              <div class="more"></div>
+            </li>
+            <li class="patient">
+              <div class="patient-left">
+                <div class="patient-pic-6"></div>
+                <div class="patient-info">
+                  <h4>Ashley Martinez</h4>
+                  <p>Female, 54</p>
+                </div>
+              </div>
+              <div class="more"></div>
+            </li>
+            <li class="patient">
+              <div class="patient-left">
+                <div class="patient-pic-7"></div>
+                <div class="patient-info">
+                  <h4>Olivia Brown</h4>
+                  <p>Female, 32</p>
+                </div>
+              </div>
+              <div class="more"></div>
+            </li>
+            <li class="patient">
+              <div class="patient-left">
+                <div class="patient-pic-8"></div>
+                <div class="patient-info">
+                  <h4>Tyler Devis</h4>
+                  <p>Male, 19</p>
+                </div>
+              </div>
+              <div class="more"></div>
+            </li>
+            <li class="patient">
+              <div class="patient-left">
+                <div class="patient-pic-9"></div>
+                <div class="patient-info">
+                  <h4>kevin Anderson</h4>
+                  <p>Male, 30</p>
+                </div>
+              </div>
+              <div class="more"></div>
+            </li>
+            <li class="patient">
+              <div class="patient-left">
+                <div class="patient-pic-10"></div>
+                <div class="patient-info">
+                  <h4>Dylan Thompson</h4>
+                  <p>Male, 36</p>
+                </div>
+              </div>
+              <div class="more"></div>
+            </li>
+            <li class="patient">
+              <div class="patient-left">
+                <div class="patient-pic-11"></div>
+                <div class="patient-info">
+                  <h4>Nathan Enwas</h4>
+                  <p>Male, 58</p>
+                </div>
+              </div>
+              <div class="more"></div>
+            </li>
+
+          </ul>
+        </div>
+      </aside>
+      <!-- 🔷 CENTER MAIN -->
+      <main class="main">
+        <!-- 📊 DIAGNOSIS SECTION -->
+        <section class="diagnosis-container">
+          <h4>Diagnosis History</h3>
+          <div class="graph-wrapper">
+
+            <!-- ✅ TOP HEADING -->
+            <div class="graph-header">
+              <h4>Blood Pressure</h4>
+            </div>
+            <div class="graph-content">
+
+              <div class="graph">
+                <canvas id="bpChart"></canvas>
+              </div>
+
+              <div class="bp-info">
+
+                <div class="bp-block">
+                  <div class="label">
+                    <span class="dot pink"></span>
+                    <span>Systolic</span>
+                  </div>
+                  <h2 id="sysValue">--</h2>
+
+                  <div class="bp-row">
+                    <span class="arrow up"></span>
+                    <p id="sysLevel">--</p>
+                  </div>
+                </div>
+
+                <hr>
+
+                <div class="bp-block">
+                  <div class="label">
+                    <span class="dot blue"></span>
+                    <span>Diastolic</span>
+                  </div>
+                  <h2 id="diaValue">--</h2>
+                  <div class="bp-row">
+                     <span class="arrow down"></span>
+                    <p id="diaLevel">--</p>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- 💊 CARDS -->
+          <div class="cards">
+
+            <div class="card">
+              <div class="respRateIcon"></div>
+              <h4>Respiratory Rate</h4>
+              <p id="respRate"></p>
+              <span id="respStatus"></span>
+            </div>
+
+            <div class="card">
+              <div class="TempIcon"></div>
+              <h4>Temperature</h4>
+              <p id="temp"></p>
+              <span id="tempStatus"></span>
+            </div>
+
+            <div class="card">
+              <div class="HeartIcon"></div>
+              <h4>Heart Rate</h4>
+              <p id="heartRate"></p>
+              <span id="heartStatus"></span>
+            </div>
+
+          </div>
+
+        </section>
+        <!-- 📋 DIAGNOSTIC LIST-->
+        <section class="diagnostic">
+          <h3>Diagnostic List</h3>
+          <div class="diagnostic-header">
+            <div class="name-header">Problem / Diagnosis</div>
+            <div class="description-header">Description</div>
+            <div class="status-header">Status</div>
+          </div>
+          <!-- DATA FROM API -->
+          <div class="diagnostic-list" id="diagnosticList">
+          </div>
+        </section>
+
+      </main>
+
+      <!-- 🔷 RIGHT SIDEBAR -->
+      <aside class="sidebar-right">
+
+        <section class="profile-section">
+          <div class="profile-card">
+
+            <!-- Profile Image -->
+            <div class="profile-header">
+              <img id="profileImg" class="profile-img" />
+              <h2 id="patientName"></h2>
+            </div>
+
+            <!-- Info -->
+            <div class="info-row">
+              <div class="calendarIcon"></div>
+              <div>
+                <p class="label">Date Of Birth</p>
+                <p id="dob" class="value"></p>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class=" genderIcon"></div>
+              <div>
+                <p class="label">Gender</p>
+                <p id="gender" class="value"></p>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="phoneIcon"></div>
+              <div>
+                <p class="label">Contact Info</p>
+                <p id="phone" class="value"></p>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class=" emergencyIcon"></div>
+              <div>
+                <p class="label">Emergency Contacts</p>
+                <p id="emergency" class="value"></p>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class=" insuranceIcon"></div>
+              <div>
+                <p class="label">Insurance Provider</p>
+                <p id="insurance" class="value"></p>
+              </div>
+            </div>
+
+            <button class="info-btn">Show All Information</button>
+          </div>
+        </section>
+        <!-- 🔷 LAB SECTION -->
+        <section class="lab-section">
+          <div class="lab-results">
+            <h3>Lab Results</h3>
+            <div class="lab-list" id="labList"></div>
+          </div>
+        </section>
+      </aside>
+
+    </div>
+  </div>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
